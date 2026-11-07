@@ -2,96 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f2ec">
+<title>Muse Edit — Your Photo, Your Vision</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2328252f'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-size='26' fill='%23f8eab9'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
-<title>Studio Muse — AI Avatar Maker</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-:root{--ink:#25242b;--muted:#87838e;--paper:#fbf9f6;--line:#ece8e2;--lav:#e9e2f5;--purple:#7659a8;--pink:#efb8b8;--green:#d8e6d7;--shadow:0 12px 36px #3427410d}*{box-sizing:border-box}body{margin:0;background:#f6f2ec;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #9c7bc8;outline-offset:3px}.shell{max-width:1600px;margin:auto;min-height:100vh;padding:0 34px 30px}.topbar{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e8e2da}.brand{display:flex;gap:12px;align-items:center;font-weight:700;font-size:18px;letter-spacing:-.4px}.brand-icon{width:37px;height:37px;background:#28252f;border-radius:12px;color:#f8eab9;display:grid;place-items:center;font-size:20px}.brand small{display:block;color:#a19ca3;font-weight:500;letter-spacing:1.9px;font-size:9px;margin-top:3px}.nav{display:flex;gap:30px;color:#938d96;font-size:13px}.nav a{color:inherit;text-decoration:none}.nav a.active{color:#28252f;font-weight:700}.top-right{display:flex;align-items:center;gap:13px}.pill{padding:9px 14px;border:1px solid #e6e0d9;border-radius:30px;background:#fff9;font-size:12px;color:#69636d}.coin{color:#b78138;font-weight:700}.avatar-mini{width:36px;height:36px;border-radius:50%;background:linear-gradient(145deg,#f3d9d2,#c7b3d8);display:grid;place-items:center;font-size:18px}.intro{display:flex;align-items:flex-end;justify-content:space-between;padding:27px 2px 21px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;color:#a08b7c;text-transform:uppercase}.intro h1{font-family:'Playfair Display',serif;font-size:31px;line-height:1.15;font-weight:600;margin:6px 0 5px;letter-spacing:-.5px}.intro p{margin:0;color:#8f8990;font-size:13px}.level{display:flex;gap:13px;align-items:center;color:#8d8790;font-size:11px}.level-badge{width:42px;height:42px;background:#e8ddf1;color:#7555a1;display:grid;place-items:center;border-radius:50%;font-weight:700;font-size:14px}.progress{width:135px;height:5px;border-radius:9px;background:#e8e3dc;margin-top:7px;overflow:hidden}.progress i{display:block;width:45%;height:100%;background:#a68ac2;border-radius:9px}.layout{display:grid;grid-template-columns:230px minmax(420px,1fr) 320px;gap:19px;align-items:stretch}.panel{background:#fff;border:1px solid #eee9e3;border-radius:18px;box-shadow:var(--shadow)}.left-panel{padding:21px 17px;display:flex;flex-direction:column;min-height:612px}.section-label{font-size:10px;letter-spacing:1.7px;font-weight:700;color:#9a949c;text-transform:uppercase}.challenge{position:relative;background:#f6f0e9;border-radius:14px;padding:15px 14px 14px;margin:14px 0 19px;overflow:hidden}.challenge:after{content:'✦';position:absolute;right:11px;top:10px;color:#d9bd87;font-size:17px}.challenge .tag{font-size:9px;letter-spacing:1.3px;font-weight:700;color:#a27a48;text-transform:uppercase}.challenge h2{font-family:'Playfair Display',serif;font-size:18px;line-height:1.2;margin:8px 0 6px;font-weight:600}.challenge p{font-size:11px;line-height:1.55;color:#847c7a;margin:0}.challenge-meta{display:flex;gap:8px;margin-top:12px}.mini-tag{background:#ffffffa8;padding:5px 8px;border-radius:15px;font-size:9px;color:#847d79}.task-list{display:flex;flex-direction:column;gap:12px;margin:12px 0 19px}.task{display:flex;gap:9px;align-items:center;color:#736f76;font-size:11px}.task-check{width:18px;height:18px;border:1px solid #ded9df;border-radius:50%;flex:none;display:grid;place-items:center;font-size:10px}.task.done .task-check{background:#dce8da;border-color:#dce8da;color:#4f7950}.stylist{margin-top:auto;background:#f6f2fa;border-radius:14px;padding:14px}.stylist-head{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700}.sparkle{width:25px;height:25px;background:#e8def2;color:#8a6aa9;border-radius:8px;display:grid;place-items:center}.stylist p{font-size:10px;line-height:1.55;color:#88808d;margin:9px 0 12px}.text-button{border:0;background:none;color:#795ba1;font-size:10px;font-weight:700;padding:0}.center-panel{min-height:612px;position:relative;overflow:hidden;padding:0;background:#ede8e2}.stage-top{position:absolute;left:20px;right:20px;top:18px;display:flex;justify-content:space-between;align-items:center;z-index:2}.stage-label{background:#ffffffbd;padding:8px 11px;border-radius:20px;font-size:10px;color:#77717b;backdrop-filter:blur(8px)}.stage-actions{display:flex;gap:7px}.icon-btn{width:34px;height:34px;border:1px solid #ffffffa8;border-radius:50%;background:#ffffffad;display:grid;place-items:center;font-size:15px;color:#6b626e}.scene{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,#f9f4ed 0,#e8dfe0 48%,#e0dbdf 100%);overflow:hidden}.sun-disc{position:absolute;width:310px;height:310px;border-radius:50%;background:#f4dfce;opacity:.72;top:13%;left:50%;transform:translateX(-50%)}.arch{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:70%;height:77%;border-radius:170px 170px 0 0;background:linear-gradient(135deg,#d9c8c0,#cbb9c0 65%,#c2b9c9);box-shadow:inset 10px 0 25px #fff3}.arch:before{content:'';position:absolute;inset:17px 17px 0;border-radius:160px 160px 0 0;border:1px solid #ffffff48}.floor{position:absolute;bottom:0;left:0;right:0;height:91px;background:linear-gradient(#e9d8d0,#f2e8df);border-top:1px solid #ffffff8a}.floor:after{content:'';position:absolute;left:50%;top:20px;width:340px;height:28px;transform:translateX(-50%);background:#b3a5a55c;filter:blur(16px);border-radius:50%}.plant{position:absolute;bottom:75px;left:7%;font-size:58px;filter:saturate(.6);opacity:.7}.sparkle-bg{position:absolute;color:#fff4d8;font-size:22px;opacity:.8}.s1{top:31%;left:20%}.s2{top:45%;right:19%;font-size:16px}.s3{top:17%;right:28%;font-size:13px}.avatar-wrap{position:absolute;width:min(64%,300px);height:83%;bottom:37px;left:50%;transform:translateX(-50%);z-index:1;display:flex;align-items:flex-end;justify-content:center}.avatar{height:100%;width:100%;overflow:visible;filter:drop-shadow(0 11px 8px #58485320)}.stage-caption{position:absolute;bottom:15px;left:0;right:0;text-align:center;z-index:3;font-family:'Playfair Display',serif;font-size:16px;color:#574e57}.caption-sub{font-family:'DM Sans',sans-serif;font-size:9px;color:#928792;margin-top:3px;letter-spacing:1.5px;text-transform:uppercase}.right-panel{padding:21px 17px;min-height:612px;display:flex;flex-direction:column}.custom-head{display:flex;align-items:center;justify-content:space-between}.custom-head h2{font-family:'Playfair Display',serif;font-size:20px;margin:0;font-weight:600}.random-btn{border:1px solid #eee8e2;background:#fff;border-radius:20px;padding:7px 10px;color:#8b7b92;font-size:10px}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:#f5f2ef;padding:4px;border-radius:10px;margin:17px 0 15px}.tab{border:0;background:transparent;color:#938c95;padding:8px 3px;border-radius:7px;font-size:10px}.tab.active{background:white;color:#403947;box-shadow:0 2px 5px #312c3510;font-weight:700}.tab-icon{display:block;font-size:15px;margin-bottom:3px}.options-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.options-title{font-size:11px;font-weight:700}.options-count{font-size:9px;color:#aaa2aa}.options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.option{border:1px solid #eee9e5;background:#fff;border-radius:11px;padding:7px 5px 8px;min-width:0;transition:.18s;text-align:center}.option:hover{transform:translateY(-2px);border-color:#d8c8e3}.option.selected{border:1.5px solid #9b7bb6;background:#fbf8fd;box-shadow:0 0 0 2px #e9dff0}.swatch{height:48px;border-radius:8px;display:grid;place-items:center;font-size:25px;margin-bottom:6px;background:#f4e9e4}.option-name{display:block;font-size:9px;color:#5e5960;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.option-note{display:block;font-size:8px;color:#aaa1a6;margin-top:3px}.color-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:19px}.color-title{width:100%;display:flex;justify-content:space-between;font-size:10px;font-weight:700}.color-title span:last-child{font-size:9px;color:#a19aa0;font-weight:400}.color-dot{width:26px;height:26px;border-radius:50%;border:2px solid white;box-shadow:0 0 0 1px #e2dce0;position:relative}.color-dot.selected:after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;font-size:11px;color:white;text-shadow:0 1px 3px #0008;font-weight:700}.item-detail{margin-top:auto;background:#faf8f6;padding:11px 12px;border-radius:10px;display:flex;align-items:center;justify-content:space-between}.detail-label{font-size:9px;color:#a19aa0;margin-bottom:3px}.detail-name{font-size:11px;font-weight:700}.detail-icon{font-size:19px}.bottom-actions{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;margin-top:11px}.secondary,.primary{height:42px;border-radius:10px;font-size:11px;font-weight:700}.secondary{border:1px solid #eae5e0;background:white;color:#77717b}.primary{border:0;background:#302c36;color:white;box-shadow:0 4px 10px #28212a20}.primary:hover{background:#514357}.footer-note{text-align:center;font-size:9px;color:#aaa3a7;margin-top:9px}.modal-backdrop{position:fixed;inset:0;background:#29232f80;z-index:10;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(440px,100%);background:#fff;border-radius:21px;padding:28px;text-align:center;box-shadow:0 25px 80px #1f162a44;animation:pop .25s ease}@keyframes pop{from{transform:translateY(12px) scale(.97);opacity:0}to{transform:none;opacity:1}}.modal-art{font-size:42px;margin-bottom:8px}.modal h2{font:600 27px 'Playfair Display',serif;margin:4px 0 7px}.modal p{font-size:12px;color:#8d858e;line-height:1.6}.score{font:600 44px 'Playfair Display',serif;color:#8d6eaa;margin:12px}.score small{font:500 11px 'DM Sans',sans-serif;color:#999}.score-breakdown{display:flex;justify-content:center;gap:8px;margin:15px 0 21px}.score-chip{background:#f6f2f8;padding:8px 10px;border-radius:9px;font-size:9px;color:#75677e}.score-chip b{display:block;font-size:12px;color:#4e4654;margin-bottom:3px}.modal .primary{padding:0 22px}.toast{position:fixed;z-index:20;bottom:25px;left:50%;transform:translate(-50%,20px);background:#302c36;color:white;padding:11px 17px;border-radius:30px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;box-shadow:0 6px 20px #0002}.toast.show{opacity:1;transform:translate(-50%,0)}.heart{color:#cf8298}.menu-btn{display:none}
-@media(max-width:1120px){.shell{padding:0 20px 24px}.layout{grid-template-columns:195px minmax(340px,1fr) 290px;gap:12px}.left-panel,.right-panel{padding:17px 13px}.plant{left:3%;font-size:45px}.avatar-wrap{width:72%}}
-@media(max-width:850px){.shell{padding:0 14px 20px}.nav{gap:15px}.layout{grid-template-columns:190px minmax(0,1fr)}.right-panel{grid-column:1/-1;min-height:auto}.center-panel{min-height:590px}.left-panel{min-height:590px}.options{grid-template-columns:repeat(4,1fr)}.swatch{height:54px}.color-row{margin-bottom:15px}.item-detail{margin-top:5px}}
-@media(max-width:580px){.shell{padding:0 10px 15px}.topbar{height:65px}.nav{display:flex;order:3;width:100%;justify-content:space-around;gap:0;padding:9px 0 1px;font-size:11px}.topbar{height:auto;min-height:65px;flex-wrap:wrap;padding:9px 0}.brand{font-size:16px}.brand-icon{width:33px;height:33px}.top-right{gap:7px}.pill{padding:8px 9px;font-size:10px}.intro{padding:20px 2px 16px}.intro h1{font-size:26px}.intro p{font-size:11px;max-width:230px;line-height:1.5}.level{gap:8px}.level-badge{width:34px;height:34px}.progress{width:75px}.level-copy{font-size:9px}.layout{display:flex;flex-direction:column;gap:11px}.center-panel{order:0;min-height:500px;height:58vh;max-height:590px}.left-panel{order:1;min-height:auto}.right-panel{order:2;min-height:390px}.left-panel{padding:15px}.challenge{margin:10px 0 13px}.task-list{flex-direction:row;flex-wrap:wrap;gap:10px 14px;margin:9px 0 13px}.task{font-size:10px}.stylist{margin-top:0}.avatar-wrap{height:81%;width:min(76%,280px);bottom:30px}.arch{width:82%;height:76%}.plant{bottom:68px;font-size:39px}.sun-disc{width:230px;height:230px}.stage-caption{bottom:11px}.stage-top{left:11px;right:11px;top:11px}.stage-label{font-size:9px}.icon-btn{width:31px;height:31px}.options{grid-template-columns:repeat(3,1fr)}.swatch{height:48px}.right-panel{padding:17px 15px}.bottom-actions{position:sticky;bottom:8px;background:#fff;padding-top:7px}.footer-note{margin-bottom:0}.intro .eyebrow{font-size:9px}}
-@media(max-width:370px){.level-copy{display:none}.intro h1{font-size:24px}.center-panel{min-height:450px}.pill{font-size:9px}}
-
+:root{--ink:#25242b;--muted:#87838e;--paper:#fffdfa;--line:#ece8e2;--lav:#e9e2f5;--purple:#7659a8;--pink:#efb8b8;--green:#d8e6d7;--shadow:0 12px 36px #3427410d}*{box-sizing:border-box}body{margin:0;background:#f6f2ec;color:var(--ink);font:14px 'DM Sans',sans-serif}.app-shell{max-width:1280px;margin:auto;padding:0 36px 32px}.topbar{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e8e2da}.brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1.6px}.brand-mark{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:#28252f;color:#f8eab9;font-size:22px}.brand small{display:block;margin-top:3px;color:#928c98;font-size:9px;font-weight:600;letter-spacing:1.4px}.top-note{display:flex;align-items:center;gap:9px;color:#706b75;font-size:12px}.privacy-dot{width:8px;height:8px;border-radius:50%;background:#7eaa81;box-shadow:0 0 0 4px #7eaa811c}main{max-width:1050px;margin:auto}.intro{text-align:center;padding:47px 0 33px}.eyebrow,.step{color:var(--purple);font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}.intro h1{margin:12px 0 8px;font:500 clamp(38px,6vw,58px) 'Playfair Display',serif;letter-spacing:-1.4px}.intro h1 em{color:var(--purple);font-weight:500}.intro p{margin:0;color:#77727b;font-size:15px}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}.panel,.result-panel{border:1px solid #ece7e0;border-radius:18px;background:var(--paper);box-shadow:var(--shadow)}.panel{padding:25px}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:21px}.panel-head h2,.result-copy h2{margin:5px 0 0;font:600 23px 'Playfair Display',serif}.head-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#f1edf7;color:#7659a8;font-size:20px}.drop-zone{position:relative;display:grid;place-items:center;min-height:294px;overflow:hidden;border:1.5px dashed #d9d1e2;border-radius:13px;background:linear-gradient(145deg,#faf7fc,#f6f2ec);cursor:pointer;transition:border-color .2s,background .2s}.drop-zone:hover,.drop-zone.dragging{border-color:var(--purple);background:#f2edf8}.drop-zone:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #9c7bc8;outline-offset:3px}.empty-state{display:flex;align-items:center;flex-direction:column;gap:8px;padding:20px;text-align:center}.upload-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:5px;border-radius:16px;background:#e9e2f5;color:#7659a8;font-size:25px}.empty-state strong{font-size:15px}.empty-state span{color:#78727e}.empty-state small{margin-top:5px;color:#a09aa3;font-size:11px}.drop-zone img{width:100%;height:100%;max-height:390px;position:absolute;inset:0;object-fit:contain;background:#ede9e4}.change-photo{position:absolute;z-index:1;right:12px;bottom:12px;padding:9px 13px;border:0;border-radius:9px;background:#28252fe8;color:white;font-size:11px}.photo-foot{display:flex;justify-content:space-between;gap:10px;margin:12px 1px 17px;color:#8a858e;font-size:10px}.photo-foot span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.safety-note{display:flex;gap:10px;align-items:flex-start;padding:12px 13px;border:1px solid #eee8df;border-radius:11px;background:#faf8f3;color:#7a747c}.safety-note>span{color:#a27f46;font-size:17px}.safety-note p{margin:1px 0 0;font-size:11px;line-height:1.55}.field-label{display:block;margin-bottom:8px;font-weight:600}.prompt-panel textarea{display:block;width:100%;min-height:125px;resize:vertical;padding:13px 14px;border:1px solid #e7e1dc;border-radius:11px;background:#fff;color:var(--ink);font:13px/1.6 'DM Sans',sans-serif}.prompt-panel textarea::placeholder{color:#aaa4ad}.field-meta{display:flex;justify-content:space-between;gap:10px;margin-top:7px;color:#96909a;font-size:10px}.field-meta b{color:#6b6570}.examples-head{display:flex;justify-content:space-between;margin:22px 0 9px;color:#8a8490;font-size:9px;font-weight:700;letter-spacing:1.15px}.examples-head span+span{font-size:10px;font-weight:400;letter-spacing:0;text-transform:none}.examples{display:flex;flex-wrap:wrap;gap:7px}.example{padding:8px 10px;border:1px solid #ebe5ee;border-radius:9px;background:#fff;color:#5d5664;font-size:10px;transition:all .16s}.example:hover{border-color:#cbb9df;background:#faf7fd}.example span{margin-right:4px;color:#8767ac}.consent-row{display:flex;align-items:flex-start;gap:9px;margin:19px 0 14px;color:#6f6972;font-size:11px;line-height:1.45;cursor:pointer}.consent-row input{position:absolute;opacity:0;width:1px;height:1px}.fake-check{flex:0 0 17px;width:17px;height:17px;border:1px solid #c9c1cd;border-radius:5px;background:white}.consent-row input:checked+.fake-check{border-color:#7659a8;background:#7659a8;box-shadow:inset 0 0 0 3px white}.consent-row input:focus-visible+.fake-check{outline:3px solid #9c7bc8;outline-offset:3px}.primary-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:48px;border:0;border-radius:11px;background:#7659a8;color:white;font-weight:600;transition:background .2s,transform .2s}.primary-btn:not(:disabled):hover{background:#65488f;transform:translateY(-1px)}.primary-btn:disabled{background:#c9c2ce;cursor:not-allowed}.primary-btn .arrow{margin-left:auto;padding-right:4px}.primary-btn>span:first-child{margin-left:auto}.button-hint{margin:9px 0 0;color:#96909a;text-align:center;font-size:10px}.result-panel{margin-top:20px;padding:22px 25px}.result-copy p{margin:7px 0 14px;color:#817b84;font-size:12px}.brief-box{padding:15px;border:1px solid #e9e3ed;border-radius:11px;background:#faf8fc;color:#48434d;font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.result-actions{display:flex;gap:9px;margin-top:12px}.secondary-btn{padding:10px 14px;border:1px solid #e3dce8;border-radius:9px;background:#fff;color:#5f526c;font-size:11px}.secondary-btn:hover{background:#f7f3fa}footer{display:flex;justify-content:space-between;margin-top:24px;padding-top:14px;border-top:1px solid #e8e2da;color:#98929a;font-size:10px}footer span:first-child{font-weight:700;letter-spacing:1.3px}.toast{position:fixed;left:50%;bottom:22px;z-index:5;transform:translate(-50%,15px);padding:11px 16px;border-radius:10px;background:#28252f;color:white;font-size:12px;opacity:0;pointer-events:none;transition:all .2s}.toast.show{transform:translate(-50%,0);opacity:1}[hidden]{display:none!important}@media(max-width:760px){.app-shell{padding:0 18px 24px}.topbar{height:70px}.top-note{max-width:150px;text-align:right;font-size:10px}.intro{padding:36px 0 25px}.intro p{max-width:440px;margin:auto;font-size:13px;line-height:1.6}.workspace{grid-template-columns:1fr;gap:14px}.panel{padding:20px}.drop-zone{min-height:255px}.result-panel{padding:20px}footer{gap:12px;font-size:9px}}@media(max-width:420px){.app-shell{padding-right:13px;padding-left:13px}.top-note{max-width:125px}.intro h1{font-size:39px}.panel{padding:16px}.photo-foot{font-size:9px}.examples-head{font-size:8px}.example{font-size:9px}.consent-row{font-size:10px}}
 </style>
 </head>
 <body>
-<div class="shell">
-<header class="topbar"><div class="brand"><div class="brand-icon">✦</div><div>studio muse<small>YOUR LITTLE STYLE STUDIO</small></div></div><nav class="nav"><a class="active" href="#studio">Studio</a><a href="#wardrobe" id="wardrobeLink">My wardrobe <span id="wardrobeCount"></span></a><a href="#how">How to play</a></nav><div class="top-right"><div class="pill">✦ <span class="coin" id="coinCount">120</span> muse coins</div><div class="avatar-mini">🪻</div></div></header>
-<section class="intro"><div><div class="eyebrow">A little imagination goes a long way</div><h1>Make a little magic.</h1><p>Style your avatar, meet the moment, and collect a little sparkle.</p></div><div class="level"><div class="level-badge">02</div><div class="level-copy">STYLE LEVEL<div class="progress"><i id="progress"></i></div></div></div></section>
-<main class="layout" id="studio">
-<aside class="panel left-panel"><div class="section-label">Today's style quest</div><div class="challenge"><div class="tag" id="challengeTag">THE DAILY EDIT · 01</div><h2 id="challengeTitle">A garden party<br>in the clouds</h2><p id="challengeText">Dream up a soft, romantic look for a sunlit afternoon among the flowers.</p><div class="challenge-meta"><span class="mini-tag" id="challengeMood">Romantic</span><span class="mini-tag">+30 coins</span></div></div><div class="section-label">Your little checklist</div><div class="task-list" id="taskList"></div><div class="stylist"><div class="stylist-head"><span class="sparkle">✧</span> Muse's little note</div><p id="stylistHint">A soft silhouette and a touch of lilac could be just the thing.</p><button class="text-button" id="suggestBtn">✦ &nbsp;Let Muse style it for me</button></div></aside>
-<section class="panel center-panel" aria-label="Avatar preview"><div class="scene"><div class="sun-disc"></div><div class="arch"></div><div class="floor"></div><div class="plant">❧</div><span class="sparkle-bg s1">✦</span><span class="sparkle-bg s2">✧</span><span class="sparkle-bg s3">✦</span></div><div class="stage-top"><span class="stage-label">✧ &nbsp; YOUR MUSE, YOUR RULES</span><div class="stage-actions"><button class="icon-btn" id="poseBtn" title="Change pose" aria-label="Change avatar pose">♧</button><button class="icon-btn" id="shuffleBtn" title="Surprise me" aria-label="Randomize outfit">⤨</button></div></div><div class="avatar-wrap"><svg class="avatar" id="avatar" viewBox="0 0 300 500" role="img" aria-label="Your fully dressed fashion avatar"></svg></div><div class="stage-caption"><span id="avatarName">Luna</span><div class="caption-sub">your muse, your masterpiece</div></div></section>
-<aside class="panel right-panel"><div class="custom-head"><h2>Style your muse</h2><button class="random-btn" id="randomBtn">⤨ &nbsp;Surprise me</button></div><div class="tabs" id="tabs"></div><div class="options-head"><span class="options-title" id="optionsTitle">Choose a look</span><span class="options-count" id="optionsCount"></span></div><div class="options" id="options"></div><div class="color-row" id="colorRow"></div><div class="item-detail"><div><div class="detail-label">CURRENTLY LOVING</div><div class="detail-name" id="detailName">Lilac daydream</div></div><div class="detail-icon" id="detailIcon">🌷</div></div><div class="bottom-actions"><button class="secondary" id="saveBtn">♡ &nbsp;Save look</button><button class="primary" id="submitBtn">Finish the look &nbsp;→</button></div><div class="footer-note">A playful, imagination-powered styling game</div></aside>
-</main></div>
-<div class="modal-backdrop" id="resultModal"><div class="modal"><div class="modal-art" id="resultArt">🌷</div><div class="eyebrow">YOUR STYLE QUEST RESULTS</div><h2 id="resultTitle">A lovely little look!</h2><p id="resultText"></p><div class="score" id="scoreValue">0<small> / 100 style points</small></div><div class="score-breakdown" id="scoreBreakdown"></div><button class="primary" id="closeModal">Back to the studio ✦</button></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Muse Edit home"><span class="brand-mark">✦</span><span>MUSE EDIT<small>YOUR PHOTO, YOUR VISION</small></span></a>
+    <div class="top-note"><span class="privacy-dot"></span> Private by design · your photo stays on this device</div>
+  </header>
+  <main id="home">
+    <section class="intro"><div class="eyebrow">A little imagination goes a long way</div><h1>Make it <em>your</em> moment.</h1><p>Bring a photo, describe the change, and shape a clear creative brief for your image editor.</p></section>
+    <div class="workspace">
+      <section class="panel photo-panel" aria-labelledby="photo-heading">
+        <div class="panel-head"><div><div class="step">STEP 01</div><h2 id="photo-heading">Choose your photo</h2></div><span class="head-icon">▧</span></div>
+        <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Choose an image or drop it here">
+          <div class="empty-state" id="emptyState"><div class="upload-icon">↑</div><strong>Drop your photo here</strong><span>or click to browse your device</span><small>JPG, PNG, or WEBP · up to 15 MB</small></div>
+          <img id="photoPreview" alt="Selected photo preview" hidden>
+          <button class="change-photo" id="changePhoto" type="button" hidden>Choose a different photo</button>
+        </div>
+        <div class="photo-foot"><span>▣ &nbsp; Nothing is uploaded or stored</span><span id="fileLabel">No photo selected</span></div>
+        <div class="safety-note"><span>✧</span><p>Only use images of adults when you have their permission. Keep edits respectful and within your image editor's rules.</p></div>
+      </section>
+      <section class="panel prompt-panel" aria-labelledby="prompt-heading">
+        <div class="panel-head"><div><div class="step">STEP 02</div><h2 id="prompt-heading">Describe your idea</h2></div><span class="head-icon">✎</span></div>
+        <label class="field-label" for="promptInput">What would you like to change?</label>
+        <textarea id="promptInput" maxlength="1000" placeholder="For example: Restyle the outfit as a tasteful high-waisted bikini in deep teal. Keep the person's face, pose, and the beach background unchanged."></textarea>
+        <div class="field-meta"><span>Be specific about what to change and what to keep.</span><span><b id="charCount">0</b> / 1000</span></div>
+        <div class="examples-head"><span>NEED A STARTING POINT?</span><span>Tap to use an idea</span></div>
+        <div class="examples" id="examples">
+          <button type="button" class="example" data-prompt="Restyle the outfit as a tasteful, opaque high-waisted bikini in deep teal. Keep the adult subject's face, identity, pose, and background unchanged; make the result polished and natural."><span>☼</span> Beachwear refresh</button>
+          <button type="button" class="example" data-prompt="Make a subtle, natural-looking adjustment to the adult subject's bust proportions while keeping their clothing opaque and fully covering them. Preserve their identity, face, pose, and the original lighting; keep the result realistic and tasteful."><span>✧</span> Subtle silhouette edit</button>
+          <button type="button" class="example" data-prompt="Change the outfit to a relaxed linen summer set in warm ivory. Preserve the subject's face, identity, pose, body proportions, and background."><span>♧</span> Summer outfit</button>
+        </div>
+        <label class="consent-row"><input id="consentCheck" type="checkbox"><span class="fake-check" aria-hidden="true"></span><span>I confirm the person shown is an adult and I have permission to edit this photo.</span></label>
+        <button id="prepareBtn" class="primary-btn" type="button" disabled><span>✦</span> Prepare my edit brief <span class="arrow">→</span></button>
+        <p class="button-hint" id="buttonHint">Add a photo, describe your edit, and confirm permission to continue.</p>
+      </section>
+    </div>
+    <section class="result-panel" id="resultPanel" aria-live="polite" hidden>
+      <div class="result-copy"><div class="step">YOUR CREATIVE BRIEF</div><h2>Ready for your image editor.</h2><p>This page prepares a prompt only. It doesn't generate or alter the photo.</p></div>
+      <div class="brief-box" id="briefText"></div>
+      <div class="result-actions"><button class="secondary-btn" id="copyBtn" type="button">▢ &nbsp;Copy brief</button><button class="secondary-btn" id="downloadBtn" type="button">↓ &nbsp;Download .txt</button></div>
+    </section>
+    <footer><span>MUSE EDIT</span><span>Photo editing made a little more thoughtful.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
 <script>
-const tabs=[{id:'look',label:'Looks',icon:'✿'},{id:'bottom',label:'Bottoms',icon:'⌁'},{id:'extra',label:'Extras',icon:'✧'},{id:'palette',label:'Colors',icon:'◉'}];
-const catalog={
- look:[{id:'blouse',name:'Petal blouse',icon:'👚',note:'soft + pretty',color:'#c895aa'},{id:'sweater',name:'Cloud knit',icon:'🧶',note:'cozy mood',color:'#d7c7b4'},{id:'tee',name:'Sunday tee',icon:'👕',note:'easygoing',color:'#93a9a0'},{id:'jacket',name:'Muse blazer',icon:'🧥',note:'a little polish',color:'#7a7194'},{id:'dress',name:'Daydream dress',icon:'👗',note:'one-and-done',color:'#ae87b5'},{id:'overalls',name:'Garden overalls',icon:'🌼',note:'playful',color:'#809ba5'}],
- bottom:[{id:'skirt',name:'Tulle skirt',icon:'🩰',note:'floaty layers',color:'#d3a6b0'},{id:'trousers',name:'Wide-leg pants',icon:'👖',note:'breezy fit',color:'#8195a8'},{id:'shorts',name:'Tailored shorts',icon:'🩳',note:'sunny days',color:'#ba9a77'},{id:'jeans',name:'Comfy denim',icon:'👖',note:'everyday',color:'#748bab'},{id:'pleats',name:'Pleated skirt',icon:'🌷',note:'sweet classic',color:'#9b83a6'}],
- extra:[{id:'bow',name:'Petal hair bow',icon:'🎀',note:'a sweet detail'},{id:'flower',name:'Daisy pins',icon:'🌼',note:'fresh picked'},{id:'glasses',name:'Rose glasses',icon:'🕶️',note:'cool & clever'},{id:'pearls',name:'Pearl necklace',icon:'📿',note:'timeless sparkle'},{id:'bag',name:'Mini market bag',icon:'👜',note:'carry a little joy'},{id:'crown',name:'Starry headband',icon:'👑',note:'main character'}],
- palette:[{id:'lilac',name:'Lilac haze',icon:'🪻',color:'#a98aba',note:'soft + dreamy'},{id:'rose',name:'Rosewater',icon:'🌸',color:'#d58d9b',note:'romantic'},{id:'sage',name:'Sage garden',icon:'🌿',color:'#8ca58e',note:'earthy calm'},{id:'butter',name:'Buttercream',icon:'☀️',color:'#d6b45e',note:'sunshine'},{id:'sky',name:'Bluebird',icon:'🩵',color:'#7f9fb9',note:'clear skies'},{id:'berry',name:'Berry nice',icon:'🍓',color:'#a95068',note:'bold & sweet'}]};
-const colors={lilac:'#a98aba',rose:'#d58d9b',sage:'#8ca58e',butter:'#d6b45e',sky:'#7f9fb9',berry:'#a95068'};
-const quests=[
- {title:'A garden party in the clouds',text:'Dream up a soft, romantic look for a sunlit afternoon among the flowers.',mood:'Romantic',hint:'A Petal blouse, a floaty skirt, and something lilac feel just right.',target:{look:'blouse',bottom:'skirt',extra:'flower',palette:'lilac'},tag:'THE DAILY EDIT · 01'},
- {title:'A little gallery opening',text:'Make an artsy, polished impression at a tiny gallery tucked away downtown.',mood:'Artful',hint:'Try a Muse blazer, wide-leg pants, a pearl detail, and a thoughtful color.',target:{look:'jacket',bottom:'trousers',extra:'pearls',palette:'sage'},tag:'THE DAILY EDIT · 02'},
- {title:'Picnic under the stars',text:'The sky is turning pink. Put together a playful look for a cozy evening outside.',mood:'Playful',hint:'A Daydream dress, a tiny bow, and a rosewater finish are made for this.',target:{look:'dress',bottom:'pleats',extra:'bow',palette:'rose'},tag:'THE DAILY EDIT · 03'},
- {title:'Saturday at the flower market',text:'Build a cheerful, comfy look for picking up blooms and wandering all morning.',mood:'Easygoing',hint:'Garden overalls, daisy pins, and a sunny pop make a perfect market morning.',target:{look:'overalls',bottom:'shorts',extra:'flower',palette:'butter'},tag:'THE DAILY EDIT · 04'}
-];
-const defaults={look:'blouse',bottom:'skirt',extra:'flower',palette:'lilac'};
-let state={...defaults},active='look',questIndex=0,pose=0,coins=120,completed=0,saved=JSON.parse(localStorage.getItem('muse-saves')||'[]'),toastTimer;
-const $=s=>document.querySelector(s), quest=()=>quests[questIndex];
-const labelFor=(cat,id)=>catalog[cat].find(x=>x.id===id);
-function renderTabs(){ $('#tabs').innerHTML=tabs.map(t=>`<button class="tab ${active===t.id?'active':''}" data-tab="${t.id}"><span class="tab-icon">${t.icon}</span>${t.label}</button>`).join(''); }
-function renderOptions(){const list=catalog[active];$('#optionsTitle').textContent=({look:'Choose a look',bottom:'Pick a bottom',extra:'Add a little detail',palette:'Choose your palette'})[active];$('#optionsCount').textContent=`${list.length} little choices`;
- $('#options').innerHTML=list.map(o=>`<button class="option ${state[active]===o.id?'selected':''}" data-choice="${o.id}" aria-pressed="${state[active]===o.id}"><span class="swatch" style="background:${o.color||'#f5eee8'}">${active==='palette'?o.icon:o.icon}</span><span class="option-name">${o.name}</span><span class="option-note">${o.note}</span></button>`).join('');
- if(active==='palette'){$('#colorRow').style.display='flex';$('#colorRow').innerHTML=`<div class="color-title">Color story <span>Pick your finishing touch</span></div>${Object.entries(colors).map(([id,c])=>`<button class="color-dot ${state.palette===id?'selected':''}" data-choice="${id}" data-color="true" style="background:${c}" aria-label="${id} color" title="${id}"></button>`).join('')}`;}else{$('#colorRow').style.display='none';$('#colorRow').innerHTML='';}
- const selected=labelFor(active,state[active]);$('#detailName').textContent=selected.name;$('#detailIcon').textContent=selected.icon;}
-function renderQuest(){const q=quest();$('#challengeTitle').innerHTML=q.title.replace(' in the ','<br>in the ');$('#challengeText').textContent=q.text;$('#challengeMood').textContent=q.mood;$('#challengeTag').textContent=q.tag;$('#stylistHint').textContent=q.hint;renderTasks();}
-function renderTasks(){const t=quest().target;$('#taskList').innerHTML=[['look','The right look'],['bottom','A lovely bottom'],['extra','A finishing detail'],['palette','A matching palette']].map(([key,name])=>`<div class="task ${state[key]===t[key]?'done':''}"><span class="task-check">${state[key]===t[key]?'✓':''}</span>${name}</div>`).join('');}
-function renderHeader(){ $('#coinCount').textContent=coins;$('#wardrobeCount').textContent=saved.length?`(${saved.length})`:'';$('#progress').style.width=`${Math.min(100,45+completed*12)}%`; }
-function drawAvatar(){const accent=colors[state.palette],look=state.look,bottom=state.bottom,extra=state.extra;
- let legs= bottom==='skirt'||bottom==='pleats'?`<path d="M113 294 L187 294 L180 418 Q178 437 164 437 L158 327 L149 437 Q133 441 124 432Z" fill="#d9ad98"/><path d="M108 258 Q150 270 192 258 L209 346 Q151 362 91 346Z" fill="${bottom==='skirt'?'#dcaeb9':'#a98cae'}"/><path d="M105 284 Q150 295 196 284 M101 299Q150 311 201 299 M98 316Q150 328 204 316" fill="none" stroke="#ffffff75" stroke-width="3"/>`: `<path d="M113 278 Q150 289 188 278 L180 423 Q173 439 155 434 L148 322 L139 435 Q121 440 115 426Z" fill="${({trousers:'#8195a8',shorts:'#ba9a77',jeans:'#748bab'})[bottom]||'#8195a8'}"/><path d="M150 291L148 425" stroke="#ffffff35" stroke-width="3"/>${bottom==='shorts'?'<path d="M112 353L150 353M150 353L187 353" stroke="#ffffff42" stroke-width="3"/>':''}`;
- let top='';
- if(look==='dress')top=`<path d="M124 137 Q150 125 176 137 L189 181 L199 318 Q150 340 101 318 L111 180Z" fill="${accent}"/><path d="M124 137Q150 161 176 137L181 163Q150 183 119 163Z" fill="#fff7f0" opacity=".8"/><path d="M109 276Q150 292 191 276" fill="none" stroke="#fff9" stroke-width="3"/><path d="M150 177V316" stroke="#ffffff40" stroke-width="2"/>`;
- else if(look==='overalls')top=`<path d="M124 139Q150 128 176 139L185 202L195 304Q150 318 105 304L115 202Z" fill="#a9bfc2"/><path d="M126 143L135 193H164L174 143L182 166L178 300H122L118 166Z" fill="#819ba5"/><path d="M130 193H170V225H130Z" fill="#9eb2b5"/><path d="M133 145L138 193M167 193L172 145" stroke="#e9d8bd" stroke-width="6"/>`;
- else {let neck=look==='tee'?'M129 137Q150 154 171 137':look==='jacket'?'M130 135L150 160L170 135':'M127 137Q150 158 173 137';let main=look==='sweater'?'#c9b8a9':look==='jacket'?'#837b98':look==='tee'?'#aabdb2':accent;top=`<path d="M125 137Q150 128 175 137L194 156L185 203L180 294Q150 309 120 294L115 203L106 156Z" fill="${main}"/><path d="M125 140L108 155L93 213Q91 224 101 229L117 221L130 171M175 140L192 155L207 213Q209 224 199 229L183 221L170 171" fill="${main}"/><path d="${neck}L168 170H132Z" fill="#d9ad98"/>${look==='jacket'?'<path d="M150 160L138 294M150 160L164 294" fill="none" stroke="#ffffffa3" stroke-width="3"/><path d="M137 184L150 199L163 184" fill="none" stroke="#f8eee5" stroke-width="2"/>':''}${look==='sweater'?'<path d="M122 273Q150 284 178 273M117 209L129 210M171 210L183 209" fill="none" stroke="#ffffff65" stroke-width="3"/>':''}`;}
- const shoes=bottom==='shorts'?'<path d="M113 418Q134 420 146 417L144 441Q132 449 108 443Q101 438 113 418M155 417Q168 420 181 418L191 439Q187 449 157 443Z" fill="#f1e7dc"/>':'<path d="M113 420Q129 427 140 422L145 442Q130 450 104 443Q101 437 113 420M158 422Q170 427 181 420L193 440Q190 450 158 443Z" fill="#f1e7dc"/><path d="M106 442Q125 447 145 440M158 440Q176 448 192 440" fill="none" stroke="#bd9b91" stroke-width="3"/>';
- let accessory='';if(extra==='bow')accessory='<path d="M189 78Q205 60 210 77L200 91Q213 98 202 108L187 94L176 107Q166 98 179 89L170 76Q175 64 189 78Z" fill="#d9889d" stroke="#fff4" stroke-width="2"/><circle cx="190" cy="90" r="4" fill="#f8d7a5"/>';
- if(extra==='flower')accessory='<g transform="translate(194 91)"><circle r="5" fill="#eabf67"/><circle cy="-7" r="5" fill="#f6e8dc"/><circle cx="7" r="5" fill="#f6e8dc"/><circle cy="7" r="5" fill="#f6e8dc"/><circle cx="-7" r="5" fill="#f6e8dc"/></g>';
- if(extra==='glasses')accessory='<g fill="none" stroke="#9c6871" stroke-width="3"><circle cx="137" cy="91" r="11"/><circle cx="164" cy="91" r="11"/><path d="M148 91H153M126 89L120 85M175 89L181 85"/></g>';
- if(extra==='pearls')accessory='<path d="M128 143Q150 176 172 143" fill="none" stroke="#fff3d4" stroke-width="4"/><circle cx="150" cy="168" r="4" fill="#fff7dc"/>';
- if(extra==='bag')accessory='<path d="M192 210Q213 215 215 237L217 296H182L183 237Q184 220 192 210Z" fill="#d7b789" stroke="#fff3" stroke-width="2"/><path d="M190 219Q198 195 207 219" fill="none" stroke="#a77f68" stroke-width="4"/>';
- if(extra==='crown')accessory='<path d="M121 64L126 47L140 59L151 42L162 59L177 47L182 68Z" fill="#e6c876" stroke="#fff3dc" stroke-width="2"/><circle cx="151" cy="53" r="3" fill="#fff1c4"/>';
- const hair=pose%2?'<path d="M111 91Q101 48 132 40Q167 29 184 56Q197 78 184 119L177 154L166 114L124 117L118 157L106 130Z" fill="#654e50"/>':'<path d="M108 91Q101 49 132 40Q167 29 184 56Q197 78 184 119L180 154L169 126L166 91Q145 103 122 90L118 147L107 130Z" fill="#654e50"/>';
- $('#avatar').innerHTML=`<g>${legs}${shoes}<path d="M123 109L112 139Q91 159 88 209L83 256Q85 269 94 263L103 213L121 176Z" fill="#d9ad98"/><path d="M177 109L188 139Q209 159 212 209L217 256Q215 269 206 263L197 213L179 176Z" fill="#d9ad98"/><path d="M137 112H163V151H137Z" fill="#d9ad98"/>${hair}<ellipse cx="150" cy="81" rx="33" ry="42" fill="#e5bda6"/><path d="M119 77Q116 43 146 41Q173 35 185 63L181 83Q169 66 158 61Q139 73 119 77Z" fill="#654e50"/><path d="M139 87Q142 85 145 87M157 87Q160 85 163 87" stroke="#49383c" stroke-width="2.5" stroke-linecap="round"/><path d="M146 101Q151 105 156 101" fill="none" stroke="#ad6d70" stroke-width="2" stroke-linecap="round"/><circle cx="126" cy="97" r="3" fill="#d7868a"/><circle cx="174" cy="97" r="3" fill="#d7868a"/>${top}<path d="M116 222L101 262M184 222L199 262" stroke="#d9ad98" stroke-width="11" stroke-linecap="round"/>${accessory}</g>`;
-}
-function showToast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2100);}
-function refresh(){renderTabs();renderOptions();renderQuest();renderHeader();drawAvatar();}
-function choose(category,id){state[category]=id;renderOptions();renderTasks();drawAvatar();}
-function randomize(category){const list=catalog[category];let next=list[Math.floor(Math.random()*list.length)].id;if(list.length>1&&next===state[category])next=list[(list.findIndex(x=>x.id===next)+1)%list.length].id;choose(category,next);}
-function suggest(){state={...state,...quest().target};active='look';refresh();showToast('Muse picked a look for this little moment ✦');}
-function openResults(){const t=quest().target;const keys=['look','bottom','extra','palette'];const hits=keys.filter(k=>state[k]===t[k]).length;const score=Math.min(100,46+Math.round(hits*13.5));const reward=questDone?0:30;questDone=true;coins+=reward;completed+=reward?1:0;renderHeader();$('#resultArt').textContent=hits===4?'✨':hits>=2?'🌷':'🪻';$('#resultTitle').textContent=hits===4?'A perfect little match!':hits>=2?'A lovely little look!':'Your own kind of magic!';$('#resultText').textContent=reward?`You matched ${hits} of the four style clues. Your look has its own lovely point of view — and you earned ${reward} muse coins for finishing today's quest.`:`You matched ${hits} of the four style clues. Today's reward has already been collected — try another combination or save this look!`;
- $('#scoreValue').innerHTML=`${score}<small> / 100 style points</small>`;$('#scoreBreakdown').innerHTML=`<span class="score-chip"><b>${hits}/4</b>quest clues</span><span class="score-chip"><b>+${reward}</b>muse coins</span><span class="score-chip"><b>${hits>=3?'Lovely!':'Keep playing'}</b>style note</span>`;$('#closeModal').textContent='Meet a new muse ✦';$('#resultModal').classList.add('show');modalMode='result';}
-let modalMode='result',questDone=false;
-function wardrobe(){modalMode='wardrobe';$('#resultArt').textContent='🪡';$('#resultTitle').textContent='Your little wardrobe';$('#resultText').textContent=saved.length?saved.map((s,i)=>`${i+1}. ${s.name} — ${s.look}, ${s.bottom}, ${s.extra}, ${s.palette}`).join(' · '):'Your saved looks will live here. Find a combination you love, then tap “Save look” to keep it.';$('#scoreValue').innerHTML=`${saved.length}<small> saved ${saved.length===1?'look':'looks'}</small>`;$('#scoreBreakdown').innerHTML='';$('#closeModal').textContent='Back to the studio ✦';$('#resultModal').classList.add('show');}
-function saveLook(){const name=`${labelFor('palette',state.palette).name} ${labelFor('look',state.look).name}`;saved.unshift({name,look:labelFor('look',state.look).name,bottom:labelFor('bottom',state.bottom).name,extra:labelFor('extra',state.extra).name,palette:labelFor('palette',state.palette).name});saved=saved.slice(0,20);localStorage.setItem('muse-saves',JSON.stringify(saved));renderHeader();showToast('Tucked into your little wardrobe ♡');}
-document.addEventListener('click',e=>{const tab=e.target.closest('[data-tab]');if(tab){active=tab.dataset.tab;renderTabs();renderOptions();return;}const choice=e.target.closest('[data-choice]');if(choice){choose(active,choice.dataset.choice);return;}});
-$('#suggestBtn').addEventListener('click',suggest);
-$('#randomBtn').addEventListener('click',()=>randomize(active));
-$('#shuffleBtn').addEventListener('click',()=>{tabs.forEach(t=>randomize(t.id));showToast('A fresh little surprise, just for you!');});
-$('#poseBtn').addEventListener('click',()=>{pose++;drawAvatar();$('#avatarName').textContent=['Luna','Mira','Cleo','Sage'][pose%4];showToast('Meet your muse in a new pose ✧');});
-$('#saveBtn').addEventListener('click',saveLook);
-$('#submitBtn').addEventListener('click',openResults);
-$('#wardrobeLink').addEventListener('click',e=>{e.preventDefault();wardrobe();});
-document.querySelector('.nav a[href="#how"]').addEventListener('click',e=>{e.preventDefault();showToast('Pick a look, bottom, detail & palette. Match the quest clues for a higher score!');});
-$('#closeModal').addEventListener('click',()=>{const wasResult=modalMode==='result';$('#resultModal').classList.remove('show');if(wasResult){questIndex=(questIndex+1)%quests.length;questDone=false;renderQuest();showToast('A new style quest is waiting for you ✦');}});
-$('#resultModal').addEventListener('click',e=>{if(e.target.id==='resultModal')$('#resultModal').classList.remove('show');});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#resultModal').classList.remove('show');});
-refresh();
+(() => {
+  const fileInput = document.getElementById('fileInput');
+  const dropZone = document.getElementById('dropZone');
+  const emptyState = document.getElementById('emptyState');
+  const photoPreview = document.getElementById('photoPreview');
+  const changePhoto = document.getElementById('changePhoto');
+  const fileLabel = document.getElementById('fileLabel');
+  const promptInput = document.getElementById('promptInput');
+  const charCount = document.getElementById('charCount');
+  const consentCheck = document.getElementById('consentCheck');
+  const prepareBtn = document.getElementById('prepareBtn');
+  const buttonHint = document.getElementById('buttonHint');
+  const resultPanel = document.getElementById('resultPanel');
+  const briefText = document.getElementById('briefText');
+  const toast = document.getElementById('toast');
+  let selectedFile = null;
+  let previewUrl = null;
+  let currentBrief = '';
+  let toastTimer;
 
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  }
+
+  function refreshForm() {
+    charCount.textContent = promptInput.value.length;
+    prepareBtn.disabled = !(selectedFile && promptInput.value.trim() && consentCheck.checked);
+    if (!selectedFile) buttonHint.textContent = 'Add a photo, describe your edit, and confirm permission to continue.';
+    else if (!promptInput.value.trim()) buttonHint.textContent = 'Describe the change you would like to make.';
+    else if (!consentCheck.checked) buttonHint.textContent = 'Confirm the person is an adult and you have permission to edit the photo.';
+    else buttonHint.textContent = 'Your photo stays on this device. A text brief will be prepared below.';
+  }
+
+  function openPicker() {
+    fileInput.click();
+  }
+
+  function useFile(file) {
+    if (!file) return;
+    const supportedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (!supportedTypes.includes(file.type)) {
+      showToast('Choose a JPG, PNG, or WEBP image.');
+      fileInput.value = '';
+      return;
+    }
+    if (file.size > 15 * 1024 * 1024) {
+      showToast('That image is larger than 15 MB. Choose a smaller file.');
+      fileInput.value = '';
+      return;
+    }
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    selectedFile = file;
+    previewUrl = URL.createObjectURL(file);
+    photoPreview.src = previewUrl;
+    photoPreview.hidden = false;
+    emptyState.hidden = true;
+    changePhoto.hidden = false;
+    fileLabel.textContent = file.name;
+    resultPanel.hidden = true;
+    refreshForm();
+  }
+
+  dropZone.addEventListener('click', event => {
+    if (event.target.closest('.change-photo')) return;
+    openPicker();
+  });
+  dropZone.addEventListener('keydown', event => {
+    if (event.target === dropZone && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openPicker();
+    }
+  });
+  changePhoto.addEventListener('click', event => {
+    event.stopPropagation();
+    openPicker();
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) useFile(fileInput.files[0]);
+  });
+  ['dragenter', 'dragover'].forEach(type => dropZone.addEventListener(type, event => {
+    event.preventDefault();
+    dropZone.classList.add('dragging');
+  }));
+  ['dragleave', 'drop'].forEach(type => dropZone.addEventListener(type, event => {
+    event.preventDefault();
+    dropZone.classList.remove('dragging');
+  }));
+  dropZone.addEventListener('drop', event => {
+    const file = event.dataTransfer.files[0];
+    if (file) useFile(file);
+  });
+
+  promptInput.addEventListener('input', () => {
+    resultPanel.hidden = true;
+    refreshForm();
+  });
+  consentCheck.addEventListener('change', refreshForm);
+  document.getElementById('examples').addEventListener('click', event => {
+    const example = event.target.closest('[data-prompt]');
+    if (!example) return;
+    promptInput.value = example.dataset.prompt;
+    promptInput.dispatchEvent(new Event('input', { bubbles: true }));
+    promptInput.focus();
+  });
+
+  prepareBtn.addEventListener('click', () => {
+    if (prepareBtn.disabled || !selectedFile) return;
+    currentBrief = `IMAGE EDITING BRIEF\n\nSelected image: ${selectedFile.name}\n\nRequested edit:\n${promptInput.value.trim()}\n\nPreserve the subject's identity and any details not specifically requested to change. Use only with the depicted adult's permission.`;
+    briefText.textContent = currentBrief;
+    resultPanel.hidden = false;
+    resultPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    if (!currentBrief) return;
+    try {
+      await navigator.clipboard.writeText(currentBrief);
+      showToast('Brief copied to clipboard.');
+    } catch (error) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(briefText);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      showToast('Select the highlighted brief and copy it.');
+    }
+  });
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (!currentBrief) return;
+    const url = URL.createObjectURL(new Blob([currentBrief], { type: 'text/plain;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'muse-edit-brief.txt';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    showToast('Brief downloaded.');
+  });
+
+  window.addEventListener('beforeunload', () => {
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+  });
+  refreshForm();
+})();
 </script>
 </body>
 </html>
